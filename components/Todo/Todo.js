@@ -1,0 +1,30 @@
+import React, { useState } from 'react'
+import AddInput from '../AddInput/AddInput'
+import Header from '../Header/Header'
+import TodoList from '../TodoList/TodoList'
+import API from '../../API';
+
+function Todo({data=[]}) {
+     
+    const [todos, setTodos] = useState([...data]);
+
+    return (
+        <div className="todo">
+            <Header title="Todo" />
+            <AddInput 
+                setTodos={setTodos}
+                todos={todos}
+            />
+            <TodoList 
+                todos={todos}
+                setTodos={setTodos}
+            />
+        </div>
+    )
+}
+
+
+
+
+
+export default Todo
